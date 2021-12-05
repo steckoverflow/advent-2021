@@ -91,7 +91,7 @@ class Grid():
                 elif line.from_y < line.to_y:
                     y = line.from_y + i
             
-                self.grid[x][y] += 1
+                self.grid[y][x] += 1
                 
     def print_grid(self):
         print("=== Grid ===")
