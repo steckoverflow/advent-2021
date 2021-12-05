@@ -1,5 +1,5 @@
 # 4-1
-with open("input4-1.txt", "r") as f:
+with open("input4-1-lange.txt", "r") as f:
     data = f.read().split("\n")
 
 boards = []
@@ -44,7 +44,7 @@ def find_winner(numbers, boards, final=False):
             # Check if winner has x-axis win
             for j, row in enumerate(board):
                 if sum([v[1] for v in row]) == 5:
-                    #print(f"Bingo!!! We have x-axis winner. Board={k} Row={j}. Winning number={n}")
+                    print(f"Bingo!!! We have x-axis winner. Board={k} Row={j}. Winning number={n}")
                     # if not final board return board else continue until you find the final
                     if not final:
                         return board, n
@@ -58,7 +58,7 @@ def find_winner(numbers, boards, final=False):
             # Check if winner has y-axis win
             for i in range(len(board)):
                 if sum([v[1] for v in [row[i] for row in board]]) == 5:
-                    #print(f"Bingo!!! We have y-axis winner. Board={k} Rows pos={i}. Winning number={n}")
+                    print(f"Bingo!!! We have y-axis winner. Board={k} Rows pos={i}. Winning number={n}")
                     # if not final board return board else continue until you find the final
                     if not final:
                         return board, n
@@ -71,7 +71,7 @@ def find_winner(numbers, boards, final=False):
 import copy
 final_boards = copy.deepcopy(boards)
 
-winner, winning_num = find_winner(numbers.split(","), boards)
+winner, winning_num, *args = find_winner(numbers.split(","), boards)
 winning_score = sum([int(element[0]) for sub in winner for element in sub if element[1] == False])
 print("Result 1: ", winning_score * int(winning_num))
 
