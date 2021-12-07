@@ -1,4 +1,4 @@
-# 5-1
+# 6-1
 with open("input-test", "r") as f:
     data = f.read()
 
