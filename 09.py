@@ -1,5 +1,4 @@
 import io
-from os import defpath
 
 with io.open("input9-1.txt", "r") as f:
     dt = f.read()
